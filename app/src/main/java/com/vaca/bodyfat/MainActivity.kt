@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
                     d2 /= 100.0d;
                 }
 */
-        val weight=69.5
+        val weight=69.2
 
 
-        val height=176
+        val height=175
 
         val age=25
 
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             HTBodyBasicInfo(gender, height, weight, age)
         //可能是阻抗
         //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
-        hTBodyBasicInfo.f88e = 3518525
+        hTBodyBasicInfo.f88e = 3818525
         val m546a = f669t.m546a(hTBodyBasicInfo)
         Log.e("1004Calc", "execue1004:666 $m546a")
         val re1=f669t.f147C

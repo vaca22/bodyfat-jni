@@ -1,5 +1,7 @@
 package com.holtek.libHTBodyfat;
 
+import android.util.Log;
+
 import java.util.Hashtable;
 
 /* loaded from: vtble-sdk-android-v3.7.3.aar:classes.jar:com/holtek/libHTBodyfat/HTBodyResultTwoLegs.class */
@@ -72,6 +74,7 @@ public class HTBodyResultTwoLegs extends HTBodyResult {
     public int m546a(HTBodyBasicInfo hTBodyBasicInfo) {
         native_checkbody(hTBodyBasicInfo.f84a, hTBodyBasicInfo.f85b, hTBodyBasicInfo.f86c, hTBodyBasicInfo.f87d);
         int native_getbodyfat = native_getbodyfat(hTBodyBasicInfo.f88e, true);
+        Log.e("nng",native_getbodyfat+"");
         if (native_getbodyfat == 0) {
             this.f100g = native_bodyfat_percentage();
             this.f101h = native_water_percentage();

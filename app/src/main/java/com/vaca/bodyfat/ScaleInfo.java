@@ -997,7 +997,7 @@ public class ScaleInfo {
 
     public JSONObject m440a() {
         //表示保留整数
-        int i=0;
+        int i=2;
         JSONObject jSONObject = new JSONObject();
         try {
             JSONObject jSONObject2 = new JSONObject();
