@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         var f669t: HTBodyResultTwoLegs=HTBodyResultTwoLegs()
 
 
-        //男是1， 女是0
-        val gender=1;
+        //男是0， 女是1
+        val gender=0;
 
 
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         val age=25
 
         val hTBodyBasicInfo =
-            HTBodyBasicInfo(gender, height, weight, age)
+            HTBodyBasicInfo((gender+1)%2, height, weight, age)
         //可能是阻抗
         //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
         hTBodyBasicInfo.f88e = 3818525
@@ -43,33 +43,40 @@ class MainActivity : AppCompatActivity() {
         val re1=f669t.f147C
         Log.e("gaga",re1.toString())
 
-        val a=C0051c();
-        a.f669t=f669t
-        a.f691o=ScaleInfo()
-        a.f691o.m478A(re1)
-        a.f691o.m393k(0.0)
-        a.f691o.m389l(0.0)
-        a.f691o.m385m(0.0)
-        a.f691o.m355x(0.0)
-        a.f691o.m353y(0.0)
-        a.f691o.m351z(0.0)
-        a.f691o.m405h(0.0)
-        a.f691o.m401i(0.0)
-        a.f691o.m397j(0.0)
-        a.f691o.m361u(0.0)
-        a.f691o.m359v(0.0)
-        a.f691o.m357w(0.0)
+        val result=C0051c();
+        result.f669t=f669t
+        result.f691o= ScaleInfo()
+        result.f691o.m478A(re1)
+        result.f691o.m393k(0.0)
+        result.f691o.m389l(0.0)
+        result.f691o.m385m(0.0)
+        result.f691o.m355x(0.0)
+        result.f691o.m353y(0.0)
+        result.f691o.m351z(0.0)
+        result.f691o.m405h(0.0)
+        result.f691o.m401i(0.0)
+        result.f691o.m397j(0.0)
+        result.f691o.m361u(0.0)
+        result.f691o.m359v(0.0)
+        result.f691o.m357w(0.0)
 
         if (m546a == 0) {
-            a.f691o.m388l(0);
+            result.f691o.m388l(0);
         } else if (m546a == 1 || m546a == 4 || m546a == 8) {
-            a.f691o.m388l(4006);
+            result.f691o.m388l(4006);
         } else if (m546a == 16 || m546a == 32 || m546a == 64 || m546a == 128 || m546a == 256) {
-            a.f691o.m388l(4008);
+            result.f691o.m388l(4008);
         }
 
-        a.yes();
-        val gg=a.f691o.m440a().toString()
+        result.loadNativeData();
+        result.f691o.apply {
+            m442a(age.toDouble());
+            m416e(gender);
+            m408g(height);
+        }
+
+
+        val gg=result.f691o.m440a().toString()
         Log.e("good",gg.toString())
 
 

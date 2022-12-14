@@ -209,7 +209,9 @@ public class C0051c  {
 
 
 
-    public void yes(){
+    public void loadNativeData(){
+        this.f691o.m409g(mo52n());
+        this.f691o.m400i(mo51o().f373i);
         this.f691o.m379o(mo48s());
         this.f691o.m472D(mo63B());
         this.f691o.m367s(mo43x());
