@@ -2,8 +2,7 @@ package com.vaca.bodyfat;
 
 
 
-import com.holtek.libHTBodyfat.HTBodyBasicInfo;
-import com.holtek.libHTBodyfat.HTBodyResultAllBody;
+
 import com.holtek.libHTBodyfat.HTBodyResultTwoLegs;
 
 
@@ -62,8 +61,7 @@ public class C0051c  {
     /* renamed from: r */
     public static C0051c f667r;
 
-    /* renamed from: s */
-    HTBodyResultAllBody f668s;
+
 
     /* renamed from: t */
     public HTBodyResultTwoLegs f669t;
@@ -90,7 +88,7 @@ public class C0051c  {
 
 
     public ScaleInfo.EnumC0019a mo55j() {
-        this.f671v = this.f670u ? this.f668s.f110q : this.f669t.f110q;
+        this.f671v = this.f669t.f110q;
         switch (this.f671v) {
             case 0:
                 return ScaleInfo.EnumC0019a.VT_BODY_SHAPE_SLENDER;
