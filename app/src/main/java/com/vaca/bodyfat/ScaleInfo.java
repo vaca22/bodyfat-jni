@@ -1,9 +1,6 @@
 package com.vaca.bodyfat;
 
 
-import android.icu.number.Scale;
-import android.text.TextUtils;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -1015,48 +1012,48 @@ public class ScaleInfo {
             dArr[3] = 3.0d;
             dArr[4] = 4.0d;
             dArr[5] = 5.0d;
-            jSONObject.put("obesityLevelList ", C0038Y.m186a(dArr, 0));
+            jSONObject.put("obesityLevelList ", StringUtils.m186a(dArr, 0));
             JSONObject jSONObject3 = new JSONObject();
             jSONObject.put("rateOfBurnFat", jSONObject3);
-            jSONObject.put("ratioOfFat", C0038Y.m183b(m358w(), i));
-            jSONObject.put("ratioOfMuscle", C0038Y.m183b(m352z(), i));
-            jSONObject.put("ratioOfFatRange", C0038Y.m186a(C0038Y.m187a(m356x()), i));
-            jSONObject.put("ratioOfMuscleRange", C0038Y.m186a(C0038Y.m187a(m479A()), i));
-            jSONObject.put("ratioOfWater", C0038Y.m183b(m467G(), i));
-            jSONObject.put("ratioOfWaterRange", C0038Y.m186a(C0038Y.m187a(m465H()), i));
-            jSONObject.put("ratioOfProtein", C0038Y.m183b(m477B(), i));
-            jSONObject.put("ratioOfProteinRange", C0038Y.m186a(C0038Y.m187a(m475C()), i));
-            jSONObject.put("ratioOfSubcutaneousFat", C0038Y.m183b(m471E(), i));
-            jSONObject.put("ratioOfSubcutaneousFatRange", C0038Y.m186a(C0038Y.m187a(m469F()), i));
-            jSONObject.put("ratioOfSkeletalMuscle", C0038Y.m183b(m463I(), i));
-            jSONObject.put("ratioOfSkeletalMuscleRange", C0038Y.m186a(C0038Y.m187a(m473D()), i));
+            jSONObject.put("ratioOfFat", StringUtils.m183b(m358w(), i));
+            jSONObject.put("ratioOfMuscle", StringUtils.m183b(m352z(), i));
+            jSONObject.put("ratioOfFatRange", StringUtils.m186a(StringUtils.m187a(m356x()), i));
+            jSONObject.put("ratioOfMuscleRange", StringUtils.m186a(StringUtils.m187a(m479A()), i));
+            jSONObject.put("ratioOfWater", StringUtils.m183b(m467G(), i));
+            jSONObject.put("ratioOfWaterRange", StringUtils.m186a(StringUtils.m187a(m465H()), i));
+            jSONObject.put("ratioOfProtein", StringUtils.m183b(m477B(), i));
+            jSONObject.put("ratioOfProteinRange", StringUtils.m186a(StringUtils.m187a(m475C()), i));
+            jSONObject.put("ratioOfSubcutaneousFat", StringUtils.m183b(m471E(), i));
+            jSONObject.put("ratioOfSubcutaneousFatRange", StringUtils.m186a(StringUtils.m187a(m469F()), i));
+            jSONObject.put("ratioOfSkeletalMuscle", StringUtils.m183b(m463I(), i));
+            jSONObject.put("ratioOfSkeletalMuscleRange", StringUtils.m186a(StringUtils.m187a(m473D()), i));
             jSONObject.put("rValue", m419da());
-            jSONObject.put("weight", C0038Y.m183b(m456N(), i));
-            jSONObject.put("weightRange", C0038Y.m186a(C0038Y.m187a(m434aa()), i));
-            jSONObject.put("weightWHORange", C0038Y.m186a(C0038Y.m187a(m424ca()), i));
-            jSONObject.put("weightOfFat", C0038Y.m183b(m453Q(), i));
-            jSONObject.put("weightOfFatRange", C0038Y.m186a(C0038Y.m187a(m452R()), i));
-            jSONObject.put("weightOfMuscle", C0038Y.m183b(m451S(), i));
-            jSONObject.put("weightOfMuscleRange", C0038Y.m186a(C0038Y.m187a(m450T()), i));
-            jSONObject.put("weightOfWater", C0038Y.m183b(m445Y(), i));
-            jSONObject.put("weightOfWaterRange", C0038Y.m186a(C0038Y.m187a(m444Z()), i));
-            jSONObject.put("weightOfProtein", C0038Y.m183b(m449U(), i));
-            jSONObject.put("weightOfProteinRange", C0038Y.m186a(C0038Y.m187a(m448V()), i));
-            jSONObject.put("weightOfBone", C0038Y.m183b(m455O(), i));
-            jSONObject.put("weightOfBoneRange", C0038Y.m186a(C0038Y.m187a(m454P()), i));
-            jSONObject.put("weightOfSkeletalMuscle", C0038Y.m183b(m447W(), i));
-            jSONObject.put("weightOfSkeletalMuscleRange", C0038Y.m186a(C0038Y.m187a(m446X()), i));
-            jSONObject.put("weightToControl", C0038Y.m183b(m429ba(), i));
-            jSONObject.put("muscleToControl", C0038Y.m183b(m362u(), i));
+            jSONObject.put("weight", StringUtils.m183b(m456N(), i));
+            jSONObject.put("weightRange", StringUtils.m186a(StringUtils.m187a(m434aa()), i));
+            jSONObject.put("weightWHORange", StringUtils.m186a(StringUtils.m187a(m424ca()), i));
+            jSONObject.put("weightOfFat", StringUtils.m183b(m453Q(), i));
+            jSONObject.put("weightOfFatRange", StringUtils.m186a(StringUtils.m187a(m452R()), i));
+            jSONObject.put("weightOfMuscle", StringUtils.m183b(m451S(), i));
+            jSONObject.put("weightOfMuscleRange", StringUtils.m186a(StringUtils.m187a(m450T()), i));
+            jSONObject.put("weightOfWater", StringUtils.m183b(m445Y(), i));
+            jSONObject.put("weightOfWaterRange", StringUtils.m186a(StringUtils.m187a(m444Z()), i));
+            jSONObject.put("weightOfProtein", StringUtils.m183b(m449U(), i));
+            jSONObject.put("weightOfProteinRange", StringUtils.m186a(StringUtils.m187a(m448V()), i));
+            jSONObject.put("weightOfBone", StringUtils.m183b(m455O(), i));
+            jSONObject.put("weightOfBoneRange", StringUtils.m186a(StringUtils.m187a(m454P()), i));
+            jSONObject.put("weightOfSkeletalMuscle", StringUtils.m183b(m447W(), i));
+            jSONObject.put("weightOfSkeletalMuscleRange", StringUtils.m186a(StringUtils.m187a(m446X()), i));
+            jSONObject.put("weightToControl", StringUtils.m183b(m429ba(), i));
+            jSONObject.put("muscleToControl", StringUtils.m183b(m362u(), i));
             jSONObject.put("stateOfNutrition", m458L());
             jSONObject.put("sn", m459K());
 
-            jSONObject.put("ratioOfHipRange", C0038Y.m186a(C0038Y.m187a(m354y()), i));
+            jSONObject.put("ratioOfHipRange", StringUtils.m186a(StringUtils.m187a(m354y()), i));
             jSONObject.put("score", m461J());
             jSONObject.put("deviceInfo", m390l());
 
 
-            jSONObject.put("rValue", C0038Y.m183b(this.f341va, i));
+            jSONObject.put("rValue", StringUtils.m183b(this.f341va, i));
 
 
         } catch (JSONException unused) {

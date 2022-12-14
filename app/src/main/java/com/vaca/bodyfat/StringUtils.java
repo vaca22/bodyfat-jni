@@ -11,11 +11,10 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 /* renamed from: com.vtrump.vtble.Y */
 /* loaded from: vtble-sdk-android-v3.7.3.aar:classes.jar:com/vtrump/vtble/Y.class */
-public class C0038Y {
+public class StringUtils {
     /* renamed from: b */
     public static String m181b(String str) {
         StringBuilder sb = new StringBuilder();

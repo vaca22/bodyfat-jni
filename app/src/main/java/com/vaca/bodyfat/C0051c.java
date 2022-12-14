@@ -1,10 +1,5 @@
 package com.vaca.bodyfat;
-
-
-
-
 import com.holtek.libHTBodyfat.HTBodyResultTwoLegs;
-
 
 public class C0051c  {
 
@@ -66,23 +61,12 @@ public class C0051c  {
     /* renamed from: t */
     public HTBodyResultTwoLegs f669t;
 
-    /* renamed from: u */
-    private boolean f670u = false;
+
 
     /* renamed from: v */
     private int f671v;
 
-    /* renamed from: aa */
-    public static C0051c m152aa() {
-        C0051c c0051c = f667r;
-        if (c0051c == null) {
-            C0051c c0051c2 = new C0051c();
-            f667r = c0051c2;
-            return c0051c2;
-        }
-        return c0051c;
-    }
-    
+
     
 
 
