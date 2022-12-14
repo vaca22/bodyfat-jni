@@ -993,7 +993,7 @@ public class ScaleInfo {
 
 
     public JSONObject m440a() {
-        //表示保留整数
+        //表示保留小数的位数
         int i=2;
         JSONObject jSONObject = new JSONObject();
         try {
