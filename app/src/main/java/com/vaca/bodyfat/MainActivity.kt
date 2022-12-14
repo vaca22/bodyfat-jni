@@ -43,6 +43,35 @@ class MainActivity : AppCompatActivity() {
         val re1=f669t.f147C
         Log.e("gaga",re1.toString())
 
+        val a=C0051c();
+        a.f669t=f669t
+        a.f691o=ScaleInfo()
+        a.f691o.m478A(re1)
+        a.f691o.m393k(0.0)
+        a.f691o.m389l(0.0)
+        a.f691o.m385m(0.0)
+        a.f691o.m355x(0.0)
+        a.f691o.m353y(0.0)
+        a.f691o.m351z(0.0)
+        a.f691o.m405h(0.0)
+        a.f691o.m401i(0.0)
+        a.f691o.m397j(0.0)
+        a.f691o.m361u(0.0)
+        a.f691o.m359v(0.0)
+        a.f691o.m357w(0.0)
+
+        if (m546a == 0) {
+            a.f691o.m388l(0);
+        } else if (m546a == 1 || m546a == 4 || m546a == 8) {
+            a.f691o.m388l(4006);
+        } else if (m546a == 16 || m546a == 32 || m546a == 64 || m546a == 128 || m546a == 256) {
+            a.f691o.m388l(4008);
+        }
+
+        a.yes();
+        val gg=a.f691o.m440a().toString()
+        Log.e("good",gg.toString())
+
 
 
     }
