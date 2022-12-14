@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         val re1=f669t.f147C
         Log.e("gaga",re1.toString())
 
-        val result=C0051c();
+        val result=C0051c().setGender(gender);
         result.f669t=f669t
         result.f691o= ScaleInfo()
         result.f691o.m478A(re1)

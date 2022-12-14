@@ -352,6 +352,8 @@ public class ScaleInfo {
         this.f339ta = -10000.0d;
         this.f340ua = -10000.0d;
         this.f341va = -10000.0d;
+        this.f324ea = new C0051c.C0057a(0, 0);
+
     }
 
     /* renamed from: M */
@@ -583,6 +585,10 @@ public class ScaleInfo {
     public void m400i(int i) {
         this.f308O = i;
     }
+    public void m439a(C0051c.C0057a c0057a) {
+        this.f324ea = c0057a;
+    }
+    private C0051c.C0057a f324ea;
 
     /* renamed from: E */
     public double m471E() {
@@ -992,6 +998,8 @@ public class ScaleInfo {
     }
 
 
+
+
     public JSONObject m440a() {
         //表示保留小数的位数
         int i=2;
@@ -1014,6 +1022,9 @@ public class ScaleInfo {
             dArr[5] = 5.0d;
             jSONObject.put("obesityLevelList ", StringUtils.m186a(dArr, 0));
             JSONObject jSONObject3 = new JSONObject();
+            jSONObject3.put("max", this.f324ea.m120a());
+            jSONObject3.put("min", this.f324ea.m119b());
+
             jSONObject.put("rateOfBurnFat", jSONObject3);
             jSONObject.put("ratioOfFat", StringUtils.m183b(m358w(), i));
             jSONObject.put("ratioOfMuscle", StringUtils.m183b(m352z(), i));
