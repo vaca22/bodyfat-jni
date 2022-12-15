@@ -1026,6 +1026,13 @@ public class ScaleInfo {
             jSONObject.put("bmrRange", m186a(m187a(m402i()), 0));
 
             jSONObject.put("bodyShape", m398j());
+            jSONObject.put("desirableWeight",m183b(m394k(), i));
+            jSONObject.put("fatFreeBodyWeight", m183b(m386m(), i));
+            jSONObject.put("fatToControl", m183b(m383n(), i));
+
+            jSONObject.put("levelOfVisceralFat", m368s());
+            jSONObject.put("levelOfVisceralFatRange", m186a(m187a(m365t()), 1));
+            jSONObject.put("idealWeight", m183b(m371r(), i));
 
 
             jSONObject.put("obesityLevel", m360v());

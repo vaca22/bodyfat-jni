@@ -167,7 +167,7 @@ public class C0051c  {
 
 
     public double mo61D() {
-        return -10000.0d;
+        return f678b*mo46u()/100.0;
     }
     public double mo66h() {
         double r1 = this.f679c;
@@ -290,9 +290,13 @@ public class C0051c  {
         this.f691o.m441a(mo57g());
         this.f691o.m404h(mo50p());
         this.f691o.m370r(mo44w());
+        this.f691o.m422d(mo65k());
+
+
         this.f691o.m417e(mo54l());
         this.f691o.m364t(mo45v());
         this.f691o.m466G(mo88E());
+        this.f691o.m413f(mo53m());
         this.f691o.m462I(mo59G());
         this.f691o.m426c(mo55j().f354m);
         this.f691o.m392k(mo41z().f364j);
@@ -302,16 +306,47 @@ public class C0051c  {
 
 
 
+    protected double mo53m() {
+        double d;
+        if (m141J()) {
+            double d2 = this.f681e;
+            if (d2 < 10.0d || d2 > 17.0d) {
+                double d3 = this.f681e;
+                d = d3 <= 30.0d ? 18.0d : d3 <= 40.0d ? 18.399999618530273d : d3 <= 60.0d ? 19.0d : 19.399999618530273d;
+            } else {
+                d = 17.0d;
+            }
+        } else {
+            double d4 = this.f681e;
+            if (d4 < 10.0d || d4 > 17.0d) {
+                double d5 = this.f681e;
+                d = d5 <= 30.0d ? 23.0d : d5 <= 40.0d ? 23.399999618530273d : d5 <= 60.0d ? 24.0d : 24.399999618530273d;
+            } else {
+                d = 22.0d;
+            }
+        }
+        double mo63B = mo63B() - ((d * this.f678b) / 100.0d);
+        double d6 = mo63B;
+        if (mo63B < 0.0d) {
+            d6 = 0.0d;
+        }
+        return d6;
+    }
 
 
 
 
+    protected double mo65k() {
+        return mo52n();
+    }
 
 
 
     protected ScaleInfo.EnumC0020b mo41z() {
-        return ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_INVALID;
+        double mo66h = mo66h();
+        return mo66h <= 16.0d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_SEVERELY_MALNUTRITION : mo66h <= 17.5d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_MODERATE_MALNUTRITION : mo66h <= 18.5d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_MALNUTRITION : mo66h <= 24.0d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_NORMAL : mo66h <= 28.0d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_OVERNUTRITION : ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_SEVERLY_OVERNUTRITION;
     }
+
 
 
 
