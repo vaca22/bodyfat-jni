@@ -10,11 +10,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var f669t: HTBodyResultTwoLegs=HTBodyResultTwoLegs()
 
-
-        //男是0， 女是1
-        val gender=0;
 
 
 
@@ -27,58 +23,14 @@ class MainActivity : AppCompatActivity() {
                 }
 */
         val weight=69.4
-
-
         val height=175
-
         val age=25
-
-        val hTBodyBasicInfo =
-            HTBodyBasicInfo((gender+1)%2, height, weight, age)
-        //可能是阻抗
-        //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
-        hTBodyBasicInfo.f88e = 3818525
-        val m546a = f669t.m546a(hTBodyBasicInfo)
-        Log.e("1004Calc", "execue1004:666 $m546a")
-        val re1=f669t.f147C
-
-
-        val result=C0051c().setGender(gender).setAge(age).setWeight(weight).setHeight(height.toDouble());
-        result.f669t=f669t
-        result.f691o= ScaleInfo()
-        result.f691o.m478A(re1)
-        result.f691o.m393k(0.0)
-        result.f691o.m389l(0.0)
-        result.f691o.m385m(0.0)
-        result.f691o.m355x(0.0)
-        result.f691o.m353y(0.0)
-        result.f691o.m351z(0.0)
-        result.f691o.m405h(0.0)
-        result.f691o.m401i(0.0)
-        result.f691o.m397j(0.0)
-        result.f691o.m361u(0.0)
-        result.f691o.m359v(0.0)
-        result.f691o.m357w(0.0)
-        result.f691o.m476B(weight)
-        result.f691o.m427c(result.mo66h())
-        if (m546a == 0) {
-            result.f691o.m388l(0);
-        } else if (m546a == 1 || m546a == 4 || m546a == 8) {
-            result.f691o.m388l(4006);
-        } else if (m546a == 16 || m546a == 32 || m546a == 64 || m546a == 128 || m546a == 256) {
-            result.f691o.m388l(4008);
-        }
-
-        result.loadNativeData();
-        result.f691o.apply {
-            m442a(age.toDouble());
-            m416e(gender);
-            m408g(height);
-        }
-
-
-        val gg=result.f691o.m440a().toString()
-        Log.e("good",gg.toString())
+        //男是0， 女是1
+        val gender=0;
+        val result=AnalysisFat()
+        result.initScaleInfo(gender,age, height, weight)
+        val gg=result.fatResult
+        Log.e("good",gg)
 
 
 

@@ -357,7 +357,7 @@ public class ScaleInfo {
         this.f339ta = -10000.0d;
         this.f340ua = -10000.0d;
         this.f341va = -10000.0d;
-        this.f324ea = new C0051c.C0057a(0, 0);
+        this.f324ea = new AnalysisFat.C0057a(0, 0);
 
     }
 
@@ -590,10 +590,10 @@ public class ScaleInfo {
     public void m400i(int i) {
         this.f308O = i;
     }
-    public void m439a(C0051c.C0057a c0057a) {
+    public void m439a(AnalysisFat.C0057a c0057a) {
         this.f324ea = c0057a;
     }
-    private C0051c.C0057a f324ea;
+    private AnalysisFat.C0057a f324ea;
 
     /* renamed from: E */
     public double m471E() {
