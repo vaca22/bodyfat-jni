@@ -12,8 +12,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-
-
         /*  int i3 = (bArr[11] >> 4) & 15;
                 double d2 = ((bArr[12] & 255) << 8) | (bArr[13] & 255);
                 if (i3 == 1) {
@@ -22,16 +20,15 @@ class MainActivity : AppCompatActivity() {
                     d2 /= 100.0d;
                 }
 */
-        val weight=69.4
-        val height=175
-        val age=25
+        val weight = 69.4
+        val height = 175
+        val age = 25
         //男是0， 女是1
-        val gender=0;
-        val result=AnalysisFat()
-        result.initScaleInfo(gender,age, height, weight,3818525)
-        val gg=result.fatResult
-        Log.e("good",gg)
-
+        val gender = 0;
+        val result = AnalysisFat()
+        result.initScaleInfo(gender, age, height, weight, 3818525)
+        val gg = result.fatResult
+        Log.e("good", gg)
 
 
     }

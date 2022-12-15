@@ -1,7 +1,6 @@
 package com.vaca.bodyfat;
 
 
-
 import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
@@ -9,6 +8,7 @@ import android.util.Log;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -162,7 +162,6 @@ public class StringUtils {
     }
 
 
-
     /* renamed from: a */
     public static String m190a(byte[] bArr) {
         StringBuilder sb = new StringBuilder("");
@@ -256,7 +255,6 @@ public class StringUtils {
     }
 
 
-
     /* renamed from: a */
     public static boolean m199a() {
         return Build.VERSION.SDK_INT >= 21;
@@ -300,7 +298,7 @@ public class StringUtils {
                 return jSONArray;
             }
             try {
-                 jSONArray.put(m183b(dArr[i2], i));
+                jSONArray.put(m183b(dArr[i2], i));
             } catch (JSONException unused) {
 
             }

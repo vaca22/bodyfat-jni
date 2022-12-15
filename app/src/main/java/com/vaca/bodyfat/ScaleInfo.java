@@ -181,7 +181,6 @@ public class ScaleInfo {
     private int[] f323da;
 
 
-
     /* renamed from: fa */
     private int f325fa;
 
@@ -232,84 +231,7 @@ public class ScaleInfo {
 
     /* renamed from: va */
     private double f341va;
-
-
-    public enum VTUnit {
-        VTUnitKg(0),
-        VTUnitPound(1),
-        VTUnitJin(2),
-        VTUnitStonePound(3),
-        VTUnitStone(4);
-
-        public final int nativeInt;
-
-        VTUnit(int i) {
-            this.nativeInt = i;
-        }
-    }
-
-
-    public enum EnumC0019a {
-        VT_BODY_SHAPE_INVALID(-10000),
-        VT_BODY_SHAPE_ERROR(0),
-        VT_BODY_SHAPE_HIDDEN_FAT(1),
-        VT_BODY_SHAPE_CHUBBY(2),
-        VT_BODY_SHAPE_BEEFY(3),
-        VT_BODY_SHAPE_SLIM(4),
-        VT_BODY_SHAPE_FIT(5),
-        VT_BODY_SHAPE_ATHLETIC(6),
-        VT_BODY_SHAPE_SLENDER(7),
-        VT_BODY_SHAPE_LEAN(8),
-        VT_BODY_SHAPE_WELL_BUILT(9);
-
-
-        /* renamed from: m */
-        public final int f354m;
-
-        EnumC0019a(int i) {
-            this.f354m = i;
-        }
-    }
-
-
-    public enum EnumC0020b {
-        VT_NUTRITRUE_STATE_INVALID(-10000),
-        VT_NUTRITRUE_STATE_ERROR(0),
-        VT_NUTRITRUE_STATE_SEVERELY_MALNUTRITION(1),
-        VT_NUTRITRUE_STATE_MODERATE_MALNUTRITION(2),
-        VT_NUTRITRUE_STATE_MALNUTRITION(3),
-        VT_NUTRITRUE_STATE_NORMAL(4),
-        VT_NUTRITRUE_STATE_OVERNUTRITION(5),
-        VT_NUTRITRUE_STATE_SEVERLY_OVERNUTRITION(6);
-
-
-        /* renamed from: j */
-        public final int f364j;
-
-        EnumC0020b(int i) {
-            this.f364j = i;
-        }
-    }
-
-    /* renamed from: com.vtrump.vtble.Scale.ScaleInfo$c */
-    /* loaded from: vtble-sdk-android-v3.7.3.aar:classes.jar:com/vtrump/vtble/Scale/ScaleInfo$c.class */
-    public enum EnumC0021c {
-        VT_OBESITY_LEVEL_INVALID(-10000),
-        VT_OBESITY_LEVEL_LIGHT(0),
-        VT_OBESITY_LEVEL_NORMAL(1),
-        VT_OBESITY_LEVEL_OVERWEIGHT(2),
-        VT_OBESITY_LEVEL_MILD(3),
-        VT_OBESITY_LEVEL_MODERATE(4),
-        VT_OBESITY_LEVEL_SEVERE(5);
-
-
-        /* renamed from: i */
-        public final int f373i;
-
-        EnumC0021c(int i) {
-            this.f373i = i;
-        }
-    }
+    private AnalysisFat.C0057a f324ea;
 
 
     public ScaleInfo() {
@@ -590,10 +512,10 @@ public class ScaleInfo {
     public void m400i(int i) {
         this.f308O = i;
     }
+
     public void m439a(AnalysisFat.C0057a c0057a) {
         this.f324ea = c0057a;
     }
-    private AnalysisFat.C0057a f324ea;
 
     /* renamed from: E */
     public double m471E() {
@@ -724,8 +646,6 @@ public class ScaleInfo {
     public void m435a(int[] iArr) {
         this.f323da = iArr;
     }
-
-
 
     /* renamed from: p */
     public int m377p() {
@@ -1002,12 +922,9 @@ public class ScaleInfo {
         return this.f327ha;
     }
 
-
-
-
     public JSONObject m440a() {
         //表示保留小数的位数
-        int i=2;
+        int i = 2;
         JSONObject jSONObject = new JSONObject();
         try {
             JSONObject jSONObject2 = new JSONObject();
@@ -1026,7 +943,7 @@ public class ScaleInfo {
             jSONObject.put("bmrRange", m186a(m187a(m402i()), 0));
 
             jSONObject.put("bodyShape", m398j());
-            jSONObject.put("desirableWeight",m183b(m394k(), i));
+            jSONObject.put("desirableWeight", m183b(m394k(), i));
             jSONObject.put("fatFreeBodyWeight", m183b(m386m(), i));
             jSONObject.put("fatToControl", m183b(m383n(), i));
 
@@ -1094,5 +1011,81 @@ public class ScaleInfo {
 
         }
         return jSONObject;
+    }
+
+    public enum VTUnit {
+        VTUnitKg(0),
+        VTUnitPound(1),
+        VTUnitJin(2),
+        VTUnitStonePound(3),
+        VTUnitStone(4);
+
+        public final int nativeInt;
+
+        VTUnit(int i) {
+            this.nativeInt = i;
+        }
+    }
+
+    public enum EnumC0019a {
+        VT_BODY_SHAPE_INVALID(-10000),
+        VT_BODY_SHAPE_ERROR(0),
+        VT_BODY_SHAPE_HIDDEN_FAT(1),
+        VT_BODY_SHAPE_CHUBBY(2),
+        VT_BODY_SHAPE_BEEFY(3),
+        VT_BODY_SHAPE_SLIM(4),
+        VT_BODY_SHAPE_FIT(5),
+        VT_BODY_SHAPE_ATHLETIC(6),
+        VT_BODY_SHAPE_SLENDER(7),
+        VT_BODY_SHAPE_LEAN(8),
+        VT_BODY_SHAPE_WELL_BUILT(9);
+
+
+        /* renamed from: m */
+        public final int f354m;
+
+        EnumC0019a(int i) {
+            this.f354m = i;
+        }
+    }
+
+    public enum EnumC0020b {
+        VT_NUTRITRUE_STATE_INVALID(-10000),
+        VT_NUTRITRUE_STATE_ERROR(0),
+        VT_NUTRITRUE_STATE_SEVERELY_MALNUTRITION(1),
+        VT_NUTRITRUE_STATE_MODERATE_MALNUTRITION(2),
+        VT_NUTRITRUE_STATE_MALNUTRITION(3),
+        VT_NUTRITRUE_STATE_NORMAL(4),
+        VT_NUTRITRUE_STATE_OVERNUTRITION(5),
+        VT_NUTRITRUE_STATE_SEVERLY_OVERNUTRITION(6);
+
+
+        /* renamed from: j */
+        public final int f364j;
+
+        EnumC0020b(int i) {
+            this.f364j = i;
+        }
+    }
+
+
+    /* renamed from: com.vtrump.vtble.Scale.ScaleInfo$c */
+    /* loaded from: vtble-sdk-android-v3.7.3.aar:classes.jar:com/vtrump/vtble/Scale/ScaleInfo$c.class */
+    public enum EnumC0021c {
+        VT_OBESITY_LEVEL_INVALID(-10000),
+        VT_OBESITY_LEVEL_LIGHT(0),
+        VT_OBESITY_LEVEL_NORMAL(1),
+        VT_OBESITY_LEVEL_OVERWEIGHT(2),
+        VT_OBESITY_LEVEL_MILD(3),
+        VT_OBESITY_LEVEL_MODERATE(4),
+        VT_OBESITY_LEVEL_SEVERE(5);
+
+
+        /* renamed from: i */
+        public final int f373i;
+
+        EnumC0021c(int i) {
+            this.f373i = i;
+        }
     }
 }

@@ -7,6 +7,10 @@ import java.util.Hashtable;
 /* loaded from: vtble-sdk-android-v3.7.3.aar:classes.jar:com/holtek/libHTBodyfat/HTBodyResultTwoLegs.class */
 public class HTBodyResultTwoLegs extends HTBodyResult {
 
+    static {
+        System.loadLibrary("Bodyfat_SDK");
+    }
+
     /* renamed from: C */
     public double f147C;
 
@@ -65,10 +69,6 @@ public class HTBodyResultTwoLegs extends HTBodyResult {
     private native double native_bodyfat_subcutkg();
 
     private native double[] native_bodyfat_subcut_ratinglist();
-
-    static {
-        System.loadLibrary("Bodyfat_SDK");
-    }
 
     /* renamed from: a */
     public int m546a(HTBodyBasicInfo hTBodyBasicInfo) {

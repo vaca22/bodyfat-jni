@@ -1,140 +1,25 @@
 package com.vaca.bodyfat;
+
 import android.util.Log;
 
 import com.holtek.libHTBodyfat.HTBodyBasicInfo;
 import com.holtek.libHTBodyfat.HTBodyResultTwoLegs;
 
 public class AnalysisFat {
-    public String getFatResult(){
-        return f691o.m440a().toString();
-    }
-    public static byte[] copyOfRange(byte[] original,int formIndex,int toIndex) {
-        byte arr[] = new byte[toIndex - formIndex];
-        for (int i = 0; i < toIndex - formIndex; i++) {
-            arr[i] = original[formIndex++];
-        }
-        return arr;
-    }
-
-
-    public void initScaleInfo(int gender,int age,int height,double weight,int resi){
-        f669t =new HTBodyResultTwoLegs();
-        HTBodyBasicInfo hTBodyBasicInfo = new   HTBodyBasicInfo((gender+1)%2, height, weight, age);
-        //可能是阻抗
-        //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
-        hTBodyBasicInfo.f88e = resi;
-        int m546a = f669t.m546a(hTBodyBasicInfo);
-        double re1=f669t.f147C;
-        setGender(gender).setAge(age).setWeight(weight).setHeight(height);
-        f691o=new ScaleInfo();
-        f691o.m478A(re1);
-        f691o.m393k(0.0);
-        f691o.m389l(0.0);
-        f691o.m385m(0.0);
-        f691o.m355x(0.0);
-        f691o.m353y(0.0);
-        f691o.m351z(0.0);
-        f691o.m405h(0.0);
-        f691o.m401i(0.0);
-        f691o.m397j(0.0);
-        f691o.m361u(0.0);
-        f691o.m359v(0.0);
-        f691o.m357w(0.0);
-        f691o.m476B(weight);
-        f691o.m427c(mo66h());
-        if (m546a == 0) {
-            f691o.m388l(0);
-        } else if (m546a == 1 || m546a == 4 || m546a == 8) {
-            f691o.m388l(4006);
-        } else if (m546a == 16 || m546a == 32 || m546a == 64 || m546a == 128 || m546a == 256) {
-            f691o.m388l(4008);
-        }
-        loadNativeData();
-        f691o.m442a(age);
-        f691o.m416e(gender);
-        f691o.m408g(height);
-
-    }
-
-
-    public void initScaleInfo(int gender,int age,int height,byte[] record){
-        byte[] bArr=copyOfRange(record,13,31);
-        int i3 = (bArr[11] >> 4) & 15;
-        double weight = ((bArr[12] & 255) << 8) | (bArr[13] & 255);
-        if (i3 == 1) {
-            weight /= 10.0d;
-        } else if (i3 == 2) {
-            weight /= 100.0d;
-        }
-
-        f669t =new HTBodyResultTwoLegs();
-        HTBodyBasicInfo hTBodyBasicInfo = new   HTBodyBasicInfo((gender+1)%2, height, weight, age);
-        //可能是阻抗
-        //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
-        hTBodyBasicInfo.f88e = (((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));;
-        int m546a = f669t.m546a(hTBodyBasicInfo);
-        double re1=f669t.f147C;
-        setGender(gender).setAge(age).setWeight(weight).setHeight(height);
-        f691o=new ScaleInfo();
-        f691o.m478A(re1);
-        f691o.m393k(0.0);
-        f691o.m389l(0.0);
-        f691o.m385m(0.0);
-        f691o.m355x(0.0);
-        f691o.m353y(0.0);
-        f691o.m351z(0.0);
-        f691o.m405h(0.0);
-        f691o.m401i(0.0);
-        f691o.m397j(0.0);
-        f691o.m361u(0.0);
-        f691o.m359v(0.0);
-        f691o.m357w(0.0);
-        f691o.m476B(weight);
-        f691o.m427c(mo66h());
-        if (m546a == 0) {
-            f691o.m388l(0);
-        } else if (m546a == 1 || m546a == 4 || m546a == 8) {
-            f691o.m388l(4006);
-        } else if (m546a == 16 || m546a == 32 || m546a == 64 || m546a == 128 || m546a == 256) {
-            f691o.m388l(4008);
-        }
-        loadNativeData();
-        f691o.m442a(age);
-        f691o.m416e(gender);
-        f691o.m408g(height);
-
-    }
-
+    public static AnalysisFat f667r;
     public double f678b;
-
-
     public double f679c;
-
-
     public int f680d;
-
-
     public double f681e;
-
-
     public double f682f;
-
-
     public double f683g;
-
-
-    private boolean f687k;
-
-
-    private boolean f688l;
-
-
-    private boolean f689m;
-
-
     public ScaleInfo f691o;
-
-
+    public HTBodyResultTwoLegs f669t;
+    int gender = 0;
+    int age = 0;
+    private boolean f687k;
+    private boolean f688l;
+    private boolean f689m;
     private boolean f684h = false;
 
 
@@ -151,26 +36,107 @@ public class AnalysisFat {
 
 
     private double[][] f693q = {new double[]{10.1d, 11.1d, 14.6d, 16.1d, 17.7d}, new double[]{10.8d, 12.0d, 16.0d, 17.5d, 19.1d}, new double[]{11.8d, 13.0d, 17.3d, 19.0d, 20.7d}, new double[]{12.4d, 13.6d, 17.9d, 19.7d, 21.5d}, new double[]{12.7d, 13.9d, 18.3d, 20.0d, 22.0d}, new double[]{12.9d, 14.1d, 18.4d, 20.2d, 22.2d}, new double[]{13.0d, 14.1d, 18.5d, 20.3d, 22.3d}, new double[]{13.0d, 14.2d, 18.5d, 20.3d, 22.3d}, new double[]{13.0d, 14.1d, 18.4d, 20.2d, 22.2d}, new double[]{12.9d, 14.1d, 18.3d, 20.1d, 22.1d}, new double[]{12.9d, 14.0d, 18.2d, 19.9d, 21.9d}, new double[]{12.8d, 13.9d, 18.0d, 19.8d, 21.8d}, new double[]{12.7d, 13.8d, 17.9d, 19.6d, 21.6d}, new double[]{12.6d, 13.7d, 17.7d, 19.5d, 21.4d}, new double[]{12.6d, 13.6d, 17.6d, 19.3d, 21.3d}, new double[]{12.5d, 13.5d, 17.5d, 19.2d, 21.1d}, new double[]{12.4d, 13.5d, 17.4d, 19.1d, 21.0d}, new double[]{12.4d, 13.4d, 17.3d, 18.9d, 20.9d}, new double[]{12.3d, 13.3d, 17.2d, 18.8d, 20.8d}, new double[]{12.3d, 13.3d, 17.1d, 18.8d, 20.7d}, new double[]{12.2d, 13.2d, 17.0d, 18.7d, 20.6d}, new double[]{12.2d, 13.2d, 17.0d, 18.6d, 20.5d}, new double[]{12.2d, 13.1d, 16.9d, 18.5d, 20.4d}, new double[]{12.2d, 13.1d, 16.9d, 18.5d, 20.4d}, new double[]{12.1d, 13.1d, 16.8d, 18.4d, 20.3d}, new double[]{12.4d, 13.3d, 17.1d, 18.7d, 20.6d}, new double[]{12.3d, 13.3d, 17.0d, 18.7d, 20.6d}, new double[]{12.3d, 13.3d, 17.0d, 18.6d, 20.5d}, new double[]{12.3d, 13.3d, 17.0d, 18.6d, 20.5d}, new double[]{12.3d, 13.2d, 17.0d, 18.6d, 20.4d}, new double[]{12.3d, 13.2d, 16.9d, 18.5d, 20.4d}, new double[]{12.2d, 13.2d, 16.9d, 18.5d, 20.4d}, new double[]{12.2d, 13.2d, 16.9d, 18.5d, 20.4d}, new double[]{12.2d, 13.1d, 16.9d, 18.5d, 20.3d}, new double[]{12.2d, 13.1d, 16.8d, 18.5d, 20.3d}, new double[]{12.1d, 13.1d, 16.8d, 18.4d, 20.3d}, new double[]{12.1d, 13.1d, 16.8d, 18.4d, 20.3d}, new double[]{12.1d, 13.1d, 16.8d, 18.4d, 20.3d}, new double[]{12.1d, 13.0d, 16.8d, 18.4d, 20.3d}, new double[]{12.0d, 13.0d, 16.8d, 18.4d, 20.3d}, new double[]{12.0d, 13.0d, 16.8d, 18.2d, 19.9d}, new double[]{12.0d, 13.0d, 16.8d, 18.4d, 20.4d}, new double[]{12.0d, 12.9d, 16.8d, 18.4d, 20.4d}};
-
-
-
-
-    public static AnalysisFat f667r;
-
-
-
-
-    public HTBodyResultTwoLegs f669t;
-
-
-
-
     private int f671v;
 
+    public static byte[] copyOfRange(byte[] original, int formIndex, int toIndex) {
+        byte arr[] = new byte[toIndex - formIndex];
+        for (int i = 0; i < toIndex - formIndex; i++) {
+            arr[i] = original[formIndex++];
+        }
+        return arr;
+    }
 
-    
+    public String getFatResult() {
+        return f691o.m440a().toString();
+    }
 
+    public void initScaleInfo(int gender, int age, int height, double weight, int resi) {
+        f669t = new HTBodyResultTwoLegs();
+        HTBodyBasicInfo hTBodyBasicInfo = new HTBodyBasicInfo((gender + 1) % 2, height, weight, age);
+        //可能是阻抗
+        //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
+        hTBodyBasicInfo.f88e = resi;
+        int m546a = f669t.m546a(hTBodyBasicInfo);
+        double re1 = f669t.f147C;
+        setGender(gender).setAge(age).setWeight(weight).setHeight(height);
+        f691o = new ScaleInfo();
+        f691o.m478A(re1);
+        f691o.m393k(0.0);
+        f691o.m389l(0.0);
+        f691o.m385m(0.0);
+        f691o.m355x(0.0);
+        f691o.m353y(0.0);
+        f691o.m351z(0.0);
+        f691o.m405h(0.0);
+        f691o.m401i(0.0);
+        f691o.m397j(0.0);
+        f691o.m361u(0.0);
+        f691o.m359v(0.0);
+        f691o.m357w(0.0);
+        f691o.m476B(weight);
+        f691o.m427c(mo66h());
+        if (m546a == 0) {
+            f691o.m388l(0);
+        } else if (m546a == 1 || m546a == 4 || m546a == 8) {
+            f691o.m388l(4006);
+        } else if (m546a == 16 || m546a == 32 || m546a == 64 || m546a == 128 || m546a == 256) {
+            f691o.m388l(4008);
+        }
+        loadNativeData();
+        f691o.m442a(age);
+        f691o.m416e(gender);
+        f691o.m408g(height);
 
+    }
+
+    public void initScaleInfo(int gender, int age, int height, byte[] record) {
+        byte[] bArr = copyOfRange(record, 13, 31);
+        int i3 = (bArr[11] >> 4) & 15;
+        double weight = ((bArr[12] & 255) << 8) | (bArr[13] & 255);
+        if (i3 == 1) {
+            weight /= 10.0d;
+        } else if (i3 == 2) {
+            weight /= 100.0d;
+        }
+
+        f669t = new HTBodyResultTwoLegs();
+        HTBodyBasicInfo hTBodyBasicInfo = new HTBodyBasicInfo((gender + 1) % 2, height, weight, age);
+        //可能是阻抗
+        //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
+        hTBodyBasicInfo.f88e = (((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
+        ;
+        int m546a = f669t.m546a(hTBodyBasicInfo);
+        double re1 = f669t.f147C;
+        setGender(gender).setAge(age).setWeight(weight).setHeight(height);
+        f691o = new ScaleInfo();
+        f691o.m478A(re1);
+        f691o.m393k(0.0);
+        f691o.m389l(0.0);
+        f691o.m385m(0.0);
+        f691o.m355x(0.0);
+        f691o.m353y(0.0);
+        f691o.m351z(0.0);
+        f691o.m405h(0.0);
+        f691o.m401i(0.0);
+        f691o.m397j(0.0);
+        f691o.m361u(0.0);
+        f691o.m359v(0.0);
+        f691o.m357w(0.0);
+        f691o.m476B(weight);
+        f691o.m427c(mo66h());
+        if (m546a == 0) {
+            f691o.m388l(0);
+        } else if (m546a == 1 || m546a == 4 || m546a == 8) {
+            f691o.m388l(4006);
+        } else if (m546a == 16 || m546a == 32 || m546a == 64 || m546a == 128 || m546a == 256) {
+            f691o.m388l(4008);
+        }
+        loadNativeData();
+        f691o.m442a(age);
+        f691o.m416e(gender);
+        f691o.m408g(height);
+
+    }
 
     public ScaleInfo.EnumC0019a mo55j() {
         this.f671v = this.f669t.f110q;
@@ -198,11 +164,9 @@ public class AnalysisFat {
         }
     }
 
-
     public int mo56i() {
         return this.f669t.f96c;
     }
-
 
     public int mo50p() {
         int i = this.f669t.f97d;
@@ -212,64 +176,54 @@ public class AnalysisFat {
         return i;
     }
 
-
     public double mo64A() {
         return this.f669t.f98e;
     }
 
-
     public double mo48s() {
-        double d =  this.f669t.f100g;
+        double d = this.f669t.f100g;
         if (d <= 0.0d) {
             d = 0.0d;
         }
         return d;
     }
 
-
     public double mo63B() {
-        return  this.f669t.f99f;
+        return this.f669t.f99f;
     }
-
 
     public double mo43x() {
         return this.f669t.f101h;
     }
 
-
     public double mo62C() {
         return this.f669t.f103j;
     }
-
 
     public double mo47t() {
         return this.f669t.f104k;
     }
 
-
     public int mo57g() {
         return this.f669t.f108o;
     }
-
 
     public double mo46u() {
         return this.f669t.f102i;
     }
 
-
     public double mo52n() {
         return this.f669t.f109p;
     }
-
 
     public int mo42y() {
         return this.f669t.f111r;
     }
 
-
     public double mo61D() {
-        return f678b*mo46u()/100.0;
+        return f678b * mo46u() / 100.0;
     }
+
     public double mo66h() {
         double r1 = this.f679c;
         if (this.f679c <= 0.0d) {
@@ -278,66 +232,35 @@ public class AnalysisFat {
         return (this.f678b * 10000.0d) / (r1 * r1);
     }
 
-
     public double mo59G() {
         return this.f678b - mo52n();
     }
-
 
     public ScaleInfo.EnumC0021c mo51o() {
         double mo52n = ((this.f678b - mo52n()) / mo52n()) * 100.0d;
         return mo52n < -15.0d ? ScaleInfo.EnumC0021c.VT_OBESITY_LEVEL_LIGHT : mo52n <= 15.0d ? ScaleInfo.EnumC0021c.VT_OBESITY_LEVEL_NORMAL : mo52n <= 32.0d ? ScaleInfo.EnumC0021c.VT_OBESITY_LEVEL_OVERWEIGHT : mo52n <= 52.0d ? ScaleInfo.EnumC0021c.VT_OBESITY_LEVEL_MILD : mo52n <= 74.0d ? ScaleInfo.EnumC0021c.VT_OBESITY_LEVEL_MODERATE : mo52n > 74.0d ? ScaleInfo.EnumC0021c.VT_OBESITY_LEVEL_SEVERE : ScaleInfo.EnumC0021c.VT_OBESITY_LEVEL_INVALID;
     }
 
-
     public double mo60F() {
         return (this.f678b * mo43x()) / 100.0d;
     }
-
 
     public double mo44w() {
         return (1.0f - (mo50p() * 0.0267f)) * mo48s();
     }
 
-
     public double mo54l() {
         return (this.f678b * (100.0d - mo48s())) / 100.0d;
     }
-
 
     public double mo88E() {
         return mo62C() * 0.6800000071525574d;
     }
 
-
     public double mo45v() {
         return mo47t() * 0.6800000071525574d;
     }
 
-
-    public static class C0057a {
-
-        /* renamed from: a */
-        private int f694a;
-
-        /* renamed from: b */
-        private int f695b;
-
-        public C0057a(int i, int i2) {
-            this.f694a = i;
-            this.f695b = i2;
-        }
-
-        /* renamed from: b */
-        public int m119b() {
-            return this.f694a;
-        }
-
-        /* renamed from: a */
-        public int m120a() {
-            return this.f695b;
-        }
-    }
     protected C0057a mo103r() {
         double d = this.f681e;
         return new C0057a((int) ((220.0d - d) * 0.6d), (int) ((220.0d - d) * 0.8d));
@@ -368,8 +291,7 @@ public class AnalysisFat {
         this.f691o.m435a(mo83Q());
     }
 
-
-    public void loadNativeData(){
+    public void loadNativeData() {
         m128aa();
 
         this.f691o.m439a(mo103r());
@@ -405,8 +327,6 @@ public class AnalysisFat {
         this.f691o.m396j(mo42y());
     }
 
-
-
     protected double mo53m() {
         double d;
         if (m141J()) {
@@ -434,24 +354,14 @@ public class AnalysisFat {
         return d6;
     }
 
-
-
-
     protected double mo65k() {
         return mo52n();
     }
-
-
 
     protected ScaleInfo.EnumC0020b mo41z() {
         double mo66h = mo66h();
         return mo66h <= 16.0d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_SEVERELY_MALNUTRITION : mo66h <= 17.5d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_MODERATE_MALNUTRITION : mo66h <= 18.5d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_MALNUTRITION : mo66h <= 24.0d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_NORMAL : mo66h <= 28.0d ? ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_OVERNUTRITION : ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_SEVERLY_OVERNUTRITION;
     }
-
-
-
-
-
 
     /* renamed from: W */
     protected double[] mo79W() {
@@ -498,43 +408,42 @@ public class AnalysisFat {
         return new double[]{0.0d, 18.5d, 25.0d, 30.0d, 45.0d};
     }
 
-
     protected double[] mo87K() {
-        if(gender==0){
-            if(age>=19){
-                if(age>=41){
-                    if(age>=61){
-			            return new double[]{0,22,36,41,41*1.5};
-                    }else{
+        if (gender == 0) {
+            if (age >= 19) {
+                if (age >= 41) {
+                    if (age >= 61) {
+                        return new double[]{0, 22, 36, 41, 41 * 1.5};
+                    } else {
 
-                        return new double[]{0,21,35,40,41*1.5};
+                        return new double[]{0, 21, 35, 40, 41 * 1.5};
                     }
 
-                }else{
+                } else {
 
-                    return new double[]{0,20,34,39,39*1.5};
+                    return new double[]{0, 20, 34, 39, 39 * 1.5};
                 }
 
-            }else{
-                return new double[]{0,19,33,38,38*1.5};
+            } else {
+                return new double[]{0, 19, 33, 38, 38 * 1.5};
             }
 
 
-        }else{
-            if(age>=19){
-                if(age>=41){
-                    if(age>=61){
-                        return new double[]{0,13,24,29,29*1.5};
-                    }else{
-                        return new double[]{0,11,22,27,27*1.5};
+        } else {
+            if (age >= 19) {
+                if (age >= 41) {
+                    if (age >= 61) {
+                        return new double[]{0, 13, 24, 29, 29 * 1.5};
+                    } else {
+                        return new double[]{0, 11, 22, 27, 27 * 1.5};
                     }
 
-                }else{
-                    return new double[]{0,10,21,26,26*1.5};
+                } else {
+                    return new double[]{0, 10, 21, 26, 26 * 1.5};
                 }
 
-            }else{
-                return new double[]{0,9,20,25,25*1.5};
+            } else {
+                return new double[]{0, 9, 20, 25, 25 * 1.5};
             }
         }
     }
@@ -607,7 +516,7 @@ public class AnalysisFat {
     /* JADX WARN: Not initialized variable reg: 2, insn: ?: MOVE  (r0 I:??) = (r2 I:??), block:B:17:0x006d */
     /* renamed from: O */
     protected double[] mo84O() {
-        double d=this.f681e;
+        double d = this.f681e;
         if (m141J()) {
             double d2 = this.f681e;
             return d2 < 19.0d ? m123c(57.0d, 62.0d) : d2 < 31.0d ? m123c(56.5d, 61.5d) : d2 < 41.0d ? m123c(56.0d, 61.0d) : d2 < 61.0d ? m123c(55.5d, 60.5d) : m123c(55.0d, 60.0d);
@@ -616,9 +525,9 @@ public class AnalysisFat {
         return d < 19.0d ? m123c(54.0d, 60.0d) : d3 < 31.0d ? m123c(53.5d, 59.5d) : d3 < 41.0d ? m123c(53.0d, 59.0d) : d3 < 61.0d ? m123c(52.5d, 58.5d) : m123c(52.0d, 58.0d);
     }
 
-
     protected double[] mo77Z() {
-        double d=this.f681e;;
+        double d = this.f681e;
+        ;
         if (m141J()) {
             double d2 = this.f681e;
             if (d2 < 19.0d) {
@@ -669,7 +578,7 @@ public class AnalysisFat {
     protected double[] mo81U() {
         if (m141J()) {
             if (this.f681e < 19.0d) {
-                return m126b(this.f678b  * 0.30000001192092896d, this.f678b * 0.75d);
+                return m126b(this.f678b * 0.30000001192092896d, this.f678b * 0.75d);
             }
             double r1 = this.f678b;
             return m126b(r1 * 0.25d, r1 * 0.550000011920929d);
@@ -682,7 +591,6 @@ public class AnalysisFat {
         }
     }
 
-
     protected double[] mo78X() {
         if (m141J()) {
             if (this.f681e < 19.0d) {
@@ -694,44 +602,43 @@ public class AnalysisFat {
             double d = this.f678b;
             return m126b(d * 0.17749999463558197d, d * 0.46149998903274536d);
         } else {
-           double r12 = this.f678b;
+            double r12 = this.f678b;
             return m126b(r12 * 0.1420000046491623d, r12 * 0.390500009059906d);
         }
     }
 
-    int gender=0;
-    public AnalysisFat setGender(int g){
-        this.gender=g;
+    public AnalysisFat setGender(int g) {
+        this.gender = g;
         return this;
     }
 
-    public AnalysisFat setWeight(double w){
-        f678b=w;
+    public AnalysisFat setWeight(double w) {
+        f678b = w;
         return this;
     }
 
-    public AnalysisFat setHeight(double h){
-        f679c=h;
+    public AnalysisFat setHeight(double h) {
+        f679c = h;
         return this;
     }
 
-    int age=0;
-    public AnalysisFat setAge(int age){
-        this.age=age;
-        this.f681e=age;
+    public AnalysisFat setAge(int age) {
+        this.age = age;
+        this.f681e = age;
         return this;
     }
 
-    boolean m141J(){
-        return gender==0;
+    boolean m141J() {
+        return gender == 0;
     }
+
     /* renamed from: N */
     protected double[] mo96N() {
         double[] dArr;
         if (m141J()) {
-            dArr = new double[] {0.0d, 49.0d, 59.0d, 88.5d};
+            dArr = new double[]{0.0d, 49.0d, 59.0d, 88.5d};
         } else {
-            dArr = new double[] {0.0d, 40.0d, 50.0d, 75.0d};
+            dArr = new double[]{0.0d, 40.0d, 50.0d, 75.0d};
         }
         return dArr;
     }
@@ -739,7 +646,7 @@ public class AnalysisFat {
     /* JADX WARN: Not initialized variable reg: 2, insn: ?: MOVE  (r0 I:??) = (r2 I:??), block:B:11:0x0043 */
     /* renamed from: f */
     protected double[] mo68f() {
-        double d=this.f678b;
+        double d = this.f678b;
         if (!m141J()) {
             return d < 45.0d ? m138a(0.5d, 3.0d) : this.f678b < 60.0d ? m138a(1.7999999523162842d, 4.199999809265137d) : m138a(2.0d, 6.5d);
         }
@@ -760,7 +667,6 @@ public class AnalysisFat {
         double d3 = i;
         return new double[]{0.0d, d3, d3 * 1.5d};
     }
-
 
     protected double[] m143H() {
         double d = this.f681e;
@@ -802,11 +708,9 @@ public class AnalysisFat {
         }
     }
 
-
     protected double[] mo85M() {
         return m141J() ? this.f681e < 19.0d ? m126b(10.75d, 46.875d) : m126b(15.625d, 34.375d) : this.f681e < 19.0d ? m126b(15.625d, 40.625d) : m126b(12.5d, 34.375d);
     }
-
 
     protected double[] mo80V() {
         if (m141J()) {
@@ -830,31 +734,25 @@ public class AnalysisFat {
         return new double[]{0.0d, d, d * 1.5d};
     }
 
-
     protected int[] mo83Q() {
         return new int[]{0, 60, 70, 80, 90, 100};
     }
-
 
     public double[] m137a(double d, double d2, double d3) {
         return new double[]{0.0d, StringUtils.m183b(d, 1), StringUtils.m183b(d2, 1), StringUtils.m183b(d3, 1), StringUtils.m183b(d3 * 1.5d, 1)};
     }
 
-
     public double[] m138a(double d, double d2) {
         return new double[]{0.0d, d, d2, StringUtils.m183b(d2 * 1.5d, 1)};
     }
-
 
     public double[] m126b(double d, double d2) {
         return new double[]{0.0d, StringUtils.m183b(d, 1), StringUtils.m183b(d2, 1), StringUtils.m183b(d2 * 1.5d, 1)};
     }
 
-
     public double[] m123c(double d, double d2) {
         return new double[]{0.0d, StringUtils.m183b(d, 1), StringUtils.m183b(d2, 1), StringUtils.m183b(d2 * 1.5d, 1)};
     }
-
 
     public double[] m129a(double[] dArr) {
         double[] dArr2 = new double[dArr.length];
@@ -864,7 +762,6 @@ public class AnalysisFat {
         return dArr2;
     }
 
-
     public double[] m125b(double[] dArr) {
         double[] dArr2 = new double[dArr.length];
         for (int i = 0; i < dArr.length; i++) {
@@ -873,7 +770,29 @@ public class AnalysisFat {
         return dArr2;
     }
 
+    public static class C0057a {
 
+        /* renamed from: a */
+        private int f694a;
+
+        /* renamed from: b */
+        private int f695b;
+
+        public C0057a(int i, int i2) {
+            this.f694a = i;
+            this.f695b = i2;
+        }
+
+        /* renamed from: b */
+        public int m119b() {
+            return this.f694a;
+        }
+
+        /* renamed from: a */
+        public int m120a() {
+            return this.f695b;
+        }
+    }
 
 
 }
