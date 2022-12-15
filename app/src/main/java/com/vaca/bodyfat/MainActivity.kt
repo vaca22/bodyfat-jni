@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                     d2 /= 100.0d;
                 }
 */
-        val weight=69.2
+        val weight=69.4
 
 
         val height=175
