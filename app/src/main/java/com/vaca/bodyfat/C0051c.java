@@ -169,6 +169,13 @@ public class C0051c  {
     public double mo61D() {
         return -10000.0d;
     }
+    public double mo66h() {
+        double r1 = this.f679c;
+        if (this.f679c <= 0.0d) {
+            return 0.0d;
+        }
+        return (this.f678b * 10000.0d) / (r1 * r1);
+    }
 
 
     public double mo59G() {

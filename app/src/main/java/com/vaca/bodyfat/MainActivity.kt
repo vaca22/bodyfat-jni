@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         result.f691o.m361u(0.0)
         result.f691o.m359v(0.0)
         result.f691o.m357w(0.0)
-
+        result.f691o.m427c(result.mo66h())
         if (m546a == 0) {
             result.f691o.m388l(0);
         } else if (m546a == 1 || m546a == 4 || m546a == 8) {

@@ -1,6 +1,11 @@
 package com.vaca.bodyfat;
 
 
+import static com.vaca.bodyfat.StringUtils.m183b;
+import static com.vaca.bodyfat.StringUtils.m186a;
+import static com.vaca.bodyfat.StringUtils.m187a;
+import static com.vaca.bodyfat.StringUtils.m196a;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -1011,6 +1016,17 @@ public class ScaleInfo {
             jSONObject2.put("height", m374q());
             jSONObject.put("user", jSONObject2);
             jSONObject.put("ageOfBody", m433b());
+            jSONObject.put("ageOfBodyRange", m186a(m187a(m428c()), 0));
+
+
+            jSONObject.put("bmi", m183b(m418e(), i));
+            jSONObject.put("bmiRange", m186a(m187a(m414f()), i));
+            jSONObject.put("bmiWHORange", m186a(m187a(m410g()), i));
+            jSONObject.put("bmr", m196a(m406h(), i));
+            jSONObject.put("bmrRange", m186a(m187a(m402i()), 0));
+
+            jSONObject.put("bodyShape", m398j());
+
 
             jSONObject.put("obesityLevel", m360v());
             double[] dArr = new double[6];
@@ -1020,42 +1036,42 @@ public class ScaleInfo {
             dArr[3] = 3.0d;
             dArr[4] = 4.0d;
             dArr[5] = 5.0d;
-            jSONObject.put("obesityLevelList ", StringUtils.m186a(dArr, 0));
+            jSONObject.put("obesityLevelList ", m186a(dArr, 0));
             JSONObject jSONObject3 = new JSONObject();
             jSONObject3.put("max", this.f324ea.m120a());
             jSONObject3.put("min", this.f324ea.m119b());
 
             jSONObject.put("rateOfBurnFat", jSONObject3);
-            jSONObject.put("ratioOfFat", StringUtils.m183b(m358w(), i));
-            jSONObject.put("ratioOfMuscle", StringUtils.m183b(m352z(), i));
-            jSONObject.put("ratioOfFatRange", StringUtils.m186a(StringUtils.m187a(m356x()), i));
-            jSONObject.put("ratioOfMuscleRange", StringUtils.m186a(StringUtils.m187a(m479A()), i));
-            jSONObject.put("ratioOfWater", StringUtils.m183b(m467G(), i));
-            jSONObject.put("ratioOfWaterRange", StringUtils.m186a(StringUtils.m187a(m465H()), i));
-            jSONObject.put("ratioOfProtein", StringUtils.m183b(m477B(), i));
-            jSONObject.put("ratioOfProteinRange", StringUtils.m186a(StringUtils.m187a(m475C()), i));
-            jSONObject.put("ratioOfSubcutaneousFat", StringUtils.m183b(m471E(), i));
-            jSONObject.put("ratioOfSubcutaneousFatRange", StringUtils.m186a(StringUtils.m187a(m469F()), i));
-            jSONObject.put("ratioOfSkeletalMuscle", StringUtils.m183b(m463I(), i));
-            jSONObject.put("ratioOfSkeletalMuscleRange", StringUtils.m186a(StringUtils.m187a(m473D()), i));
+            jSONObject.put("ratioOfFat", m183b(m358w(), i));
+            jSONObject.put("ratioOfMuscle", m183b(m352z(), i));
+            jSONObject.put("ratioOfFatRange", m186a(m187a(m356x()), i));
+            jSONObject.put("ratioOfMuscleRange", m186a(m187a(m479A()), i));
+            jSONObject.put("ratioOfWater", m183b(m467G(), i));
+            jSONObject.put("ratioOfWaterRange", m186a(m187a(m465H()), i));
+            jSONObject.put("ratioOfProtein", m183b(m477B(), i));
+            jSONObject.put("ratioOfProteinRange", m186a(m187a(m475C()), i));
+            jSONObject.put("ratioOfSubcutaneousFat", m183b(m471E(), i));
+            jSONObject.put("ratioOfSubcutaneousFatRange", m186a(m187a(m469F()), i));
+            jSONObject.put("ratioOfSkeletalMuscle", m183b(m463I(), i));
+            jSONObject.put("ratioOfSkeletalMuscleRange", m186a(m187a(m473D()), i));
             jSONObject.put("rValue", m419da());
-            jSONObject.put("weight", StringUtils.m183b(m456N(), i));
-            jSONObject.put("weightRange", StringUtils.m186a(StringUtils.m187a(m434aa()), i));
-            jSONObject.put("weightWHORange", StringUtils.m186a(StringUtils.m187a(m424ca()), i));
-            jSONObject.put("weightOfFat", StringUtils.m183b(m453Q(), i));
-            jSONObject.put("weightOfFatRange", StringUtils.m186a(StringUtils.m187a(m452R()), i));
-            jSONObject.put("weightOfMuscle", StringUtils.m183b(m451S(), i));
-            jSONObject.put("weightOfMuscleRange", StringUtils.m186a(StringUtils.m187a(m450T()), i));
-            jSONObject.put("weightOfWater", StringUtils.m183b(m445Y(), i));
-            jSONObject.put("weightOfWaterRange", StringUtils.m186a(StringUtils.m187a(m444Z()), i));
-            jSONObject.put("weightOfProtein", StringUtils.m183b(m449U(), i));
-            jSONObject.put("weightOfProteinRange", StringUtils.m186a(StringUtils.m187a(m448V()), i));
-            jSONObject.put("weightOfBone", StringUtils.m183b(m455O(), i));
-            jSONObject.put("weightOfBoneRange", StringUtils.m186a(StringUtils.m187a(m454P()), i));
-            jSONObject.put("weightOfSkeletalMuscle", StringUtils.m183b(m447W(), i));
-            jSONObject.put("weightOfSkeletalMuscleRange", StringUtils.m186a(StringUtils.m187a(m446X()), i));
-            jSONObject.put("weightToControl", StringUtils.m183b(m429ba(), i));
-            jSONObject.put("muscleToControl", StringUtils.m183b(m362u(), i));
+            jSONObject.put("weight", m183b(m456N(), i));
+            jSONObject.put("weightRange", m186a(m187a(m434aa()), i));
+            jSONObject.put("weightWHORange", m186a(m187a(m424ca()), i));
+            jSONObject.put("weightOfFat", m183b(m453Q(), i));
+            jSONObject.put("weightOfFatRange", m186a(m187a(m452R()), i));
+            jSONObject.put("weightOfMuscle", m183b(m451S(), i));
+            jSONObject.put("weightOfMuscleRange", m186a(m187a(m450T()), i));
+            jSONObject.put("weightOfWater", m183b(m445Y(), i));
+            jSONObject.put("weightOfWaterRange", m186a(m187a(m444Z()), i));
+            jSONObject.put("weightOfProtein", m183b(m449U(), i));
+            jSONObject.put("weightOfProteinRange", m186a(m187a(m448V()), i));
+            jSONObject.put("weightOfBone", m183b(m455O(), i));
+            jSONObject.put("weightOfBoneRange", m186a(m187a(m454P()), i));
+            jSONObject.put("weightOfSkeletalMuscle", m183b(m447W(), i));
+            jSONObject.put("weightOfSkeletalMuscleRange", m186a(m187a(m446X()), i));
+            jSONObject.put("weightToControl", m183b(m429ba(), i));
+            jSONObject.put("muscleToControl", m183b(m362u(), i));
             jSONObject.put("stateOfNutrition", m458L());
             jSONObject.put("sn", m459K());
 
@@ -1064,7 +1080,7 @@ public class ScaleInfo {
             jSONObject.put("deviceInfo", m390l());
 
 
-            jSONObject.put("rValue", StringUtils.m183b(this.f341va, i));
+            jSONObject.put("rValue", m183b(this.f341va, i));
 
 
         } catch (JSONException unused) {
