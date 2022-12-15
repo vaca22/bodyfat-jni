@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         //男是0， 女是1
         val gender=0;
         val result=AnalysisFat()
-        result.initScaleInfo(gender,age, height, weight)
+        result.initScaleInfo(gender,age, height, weight,3818525)
         val gg=result.fatResult
         Log.e("good",gg)
 

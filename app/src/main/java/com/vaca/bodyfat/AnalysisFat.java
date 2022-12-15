@@ -8,13 +8,70 @@ public class AnalysisFat {
     public String getFatResult(){
         return f691o.m440a().toString();
     }
+    public static byte[] copyOfRange(byte[] original,int formIndex,int toIndex) {
+        byte arr[] = new byte[toIndex - formIndex];
+        for (int i = 0; i < toIndex - formIndex; i++) {
+            arr[i] = original[formIndex++];
+        }
+        return arr;
+    }
 
-    public void initScaleInfo(int gender,int age,int height,double weight){
+
+    public void initScaleInfo(int gender,int age,int height,double weight,int resi){
         f669t =new HTBodyResultTwoLegs();
         HTBodyBasicInfo hTBodyBasicInfo = new   HTBodyBasicInfo((gender+1)%2, height, weight, age);
         //可能是阻抗
         //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
-        hTBodyBasicInfo.f88e = 3818525;
+        hTBodyBasicInfo.f88e = resi;
+        int m546a = f669t.m546a(hTBodyBasicInfo);
+        double re1=f669t.f147C;
+        setGender(gender).setAge(age).setWeight(weight).setHeight(height);
+        f691o=new ScaleInfo();
+        f691o.m478A(re1);
+        f691o.m393k(0.0);
+        f691o.m389l(0.0);
+        f691o.m385m(0.0);
+        f691o.m355x(0.0);
+        f691o.m353y(0.0);
+        f691o.m351z(0.0);
+        f691o.m405h(0.0);
+        f691o.m401i(0.0);
+        f691o.m397j(0.0);
+        f691o.m361u(0.0);
+        f691o.m359v(0.0);
+        f691o.m357w(0.0);
+        f691o.m476B(weight);
+        f691o.m427c(mo66h());
+        if (m546a == 0) {
+            f691o.m388l(0);
+        } else if (m546a == 1 || m546a == 4 || m546a == 8) {
+            f691o.m388l(4006);
+        } else if (m546a == 16 || m546a == 32 || m546a == 64 || m546a == 128 || m546a == 256) {
+            f691o.m388l(4008);
+        }
+        loadNativeData();
+        f691o.m442a(age);
+        f691o.m416e(gender);
+        f691o.m408g(height);
+
+    }
+
+
+    public void initScaleInfo(int gender,int age,int height,byte[] record){
+        byte[] bArr=copyOfRange(record,13,31);
+        int i3 = (bArr[11] >> 4) & 15;
+        double weight = ((bArr[12] & 255) << 8) | (bArr[13] & 255);
+        if (i3 == 1) {
+            weight /= 10.0d;
+        } else if (i3 == 2) {
+            weight /= 100.0d;
+        }
+
+        f669t =new HTBodyResultTwoLegs();
+        HTBodyBasicInfo hTBodyBasicInfo = new   HTBodyBasicInfo((gender+1)%2, height, weight, age);
+        //可能是阻抗
+        //(((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));
+        hTBodyBasicInfo.f88e = (((bArr[14] & 255) << 24) | ((bArr[15] & 255) << 16) | ((bArr[16] & 255) << 8) | (bArr[17] & 255));;
         int m546a = f669t.m546a(hTBodyBasicInfo);
         double re1=f669t.f147C;
         setGender(gender).setAge(age).setWeight(weight).setHeight(height);
