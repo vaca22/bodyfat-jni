@@ -12,14 +12,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        /*  int i3 = (bArr[11] >> 4) & 15;
-                double d2 = ((bArr[12] & 255) << 8) | (bArr[13] & 255);
-                if (i3 == 1) {
-                    d2 /= 10.0d;
-                } else if (i3 == 2) {
-                    d2 /= 100.0d;
-                }
-*/
         val weight = 69.4
         val height = 175
         val age = 25
