@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() {
         val m546a = f669t.m546a(hTBodyBasicInfo)
         Log.e("1004Calc", "execue1004:666 $m546a")
         val re1=f669t.f147C
-        Log.e("gaga",re1.toString())
 
-        val result=C0051c().setGender(gender).setAge(age).setWeight(weight);
+
+        val result=C0051c().setGender(gender).setAge(age).setWeight(weight).setHeight(height.toDouble());
         result.f669t=f669t
         result.f691o= ScaleInfo()
         result.f691o.m478A(re1)

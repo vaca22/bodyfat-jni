@@ -288,6 +288,8 @@ public class C0051c  {
         this.f691o.m466G(mo88E());
         this.f691o.m462I(mo59G());
         this.f691o.m426c(mo55j().f354m);
+        this.f691o.m392k(mo41z().f364j);
+
         this.f691o.m396j(mo42y());
     }
 
@@ -300,6 +302,9 @@ public class C0051c  {
 
 
 
+    protected ScaleInfo.EnumC0020b mo41z() {
+        return ScaleInfo.EnumC0020b.VT_NUTRITRUE_STATE_INVALID;
+    }
 
 
 
@@ -559,6 +564,11 @@ public class C0051c  {
 
     public C0051c setWeight(double w){
         f678b=w;
+        return this;
+    }
+
+    public C0051c setHeight(double h){
+        f679c=h;
         return this;
     }
 

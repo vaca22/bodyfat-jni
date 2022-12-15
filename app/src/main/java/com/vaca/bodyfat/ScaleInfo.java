@@ -1059,7 +1059,7 @@ public class ScaleInfo {
             jSONObject.put("stateOfNutrition", m458L());
             jSONObject.put("sn", m459K());
 
-            jSONObject.put("ratioOfHipRange", StringUtils.m186a(StringUtils.m187a(m354y()), i));
+
             jSONObject.put("score", m461J());
             jSONObject.put("deviceInfo", m390l());
 
