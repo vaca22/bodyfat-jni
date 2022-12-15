@@ -350,21 +350,45 @@ public class C0051c  {
         return new double[]{0.0d, 18.5d, 25.0d, 30.0d, 45.0d};
     }
 
-    /*  JADX ERROR: IndexOutOfBoundsException in pass: SSATransform
-        java.lang.IndexOutOfBoundsException: bitIndex < 0: -1
-        	at java.base/java.util.BitSet.get(Unknown Source)
-        	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.fillBasicBlockInfo(LiveVarAnalysis.java:65)
-        	at jadx.core.dex.visitors.ssa.LiveVarAnalysis.runAnalysis(LiveVarAnalysis.java:36)
-        	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:55)
-        	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:41)
-        */
-    /* renamed from: K */
+
     protected double[] mo87K() {
-        /*
-            Method dump skipped, instructions count: 223
-            To view this dump change 'Code comments level' option to 'DEBUG'
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.vtrump.vtble.p002c.C0056h.mo87K():double[]");
+        if(gender==0){
+            if(age>=19){
+                if(age>=41){
+                    if(age>=61){
+			            return new double[]{0,22,36,41,41*1.5};
+                    }else{
+
+                        return new double[]{0,21,35,40,41*1.5};
+                    }
+
+                }else{
+
+                    return new double[]{0,20,34,39,39*1.5};
+                }
+
+            }else{
+                return new double[]{0,19,33,38,38*1.5};
+            }
+
+
+        }else{
+            if(age>=19){
+                if(age>=41){
+                    if(age>=61){
+                        return new double[]{0,13,24,29,29*1.5};
+                    }else{
+                        return new double[]{0,11,22,27,27*1.5};
+                    }
+
+                }else{
+                    return new double[]{0,10,21,26,26*1.5};
+                }
+
+            }else{
+                return new double[]{0,9,20,25,25*1.5};
+            }
+        }
     }
 
     /* renamed from: S */
@@ -435,7 +459,7 @@ public class C0051c  {
     /* JADX WARN: Not initialized variable reg: 2, insn: ?: MOVE  (r0 I:??) = (r2 I:??), block:B:17:0x006d */
     /* renamed from: O */
     protected double[] mo84O() {
-        double d;
+        double d=this.f681e;
         if (m141J()) {
             double d2 = this.f681e;
             return d2 < 19.0d ? m123c(57.0d, 62.0d) : d2 < 31.0d ? m123c(56.5d, 61.5d) : d2 < 41.0d ? m123c(56.0d, 61.0d) : d2 < 61.0d ? m123c(55.5d, 60.5d) : m123c(55.0d, 60.0d);
@@ -444,17 +468,13 @@ public class C0051c  {
         return d < 19.0d ? m123c(54.0d, 60.0d) : d3 < 31.0d ? m123c(53.5d, 59.5d) : d3 < 41.0d ? m123c(53.0d, 59.0d) : d3 < 61.0d ? m123c(52.5d, 58.5d) : m123c(52.0d, 58.0d);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Not initialized variable reg: 2, insn: ?: MOVE  (r0 I:??) = (r2 I:??), block:B:17:0x009a */
-    /* JADX WARN: Type inference failed for: r1v30, types: [double, com.vtrump.vtble.c.h] */
-    /* JADX WARN: Type inference failed for: r1v6, types: [double, com.vtrump.vtble.c.h] */
-    /* renamed from: Z */
+
     protected double[] mo77Z() {
-        double d;
+        double d=this.f681e;;
         if (m141J()) {
             double d2 = this.f681e;
             if (d2 < 19.0d) {
-                return m123c(this * 0.5699999928474426d, this.f678b * 0.6200000047683716d);
+                return m123c(this.f678b * 0.5699999928474426d, this.f678b * 0.6200000047683716d);
             }
             if (d2 < 31.0d) {
                 double d3 = this.f678b;
@@ -466,8 +486,8 @@ public class C0051c  {
                 double d5 = this.f678b;
                 return m123c(d5 * 0.5550000071525574d, d5 * 0.6050000190734863d);
             } else {
-                ?? r1 = this.f678b;
-                return r1.m123c(r1 * 0.550000011920929d, r1 * 0.6000000238418579d);
+                double r1 = this.f678b;
+                return m123c(r1 * 0.550000011920929d, r1 * 0.6000000238418579d);
             }
         }
         double d6 = this.f681e;
@@ -484,8 +504,8 @@ public class C0051c  {
             double d10 = this.f678b;
             return m123c(d10 * 0.5249999761581421d, d10 * 0.5849999785423279d);
         } else {
-            ?? r12 = this.f678b;
-            return r12.m123c(r12 * 0.5199999809265137d, r12 * 0.5799999833106995d);
+            double r12 = this.f678b;
+            return m123c(r12 * 0.5199999809265137d, r12 * 0.5799999833106995d);
         }
     }
 
@@ -501,42 +521,51 @@ public class C0051c  {
     protected double[] mo81U() {
         if (m141J()) {
             if (this.f681e < 19.0d) {
-                return m126b(this * 0.30000001192092896d, this.f678b * 0.75d);
+                return m126b(this.f678b  * 0.30000001192092896d, this.f678b * 0.75d);
             }
-            ?? r1 = this.f678b;
-            return r1.m126b(r1 * 0.25d, r1 * 0.550000011920929d);
+            double r1 = this.f678b;
+            return m126b(r1 * 0.25d, r1 * 0.550000011920929d);
         } else if (this.f681e < 19.0d) {
             double d = this.f678b;
             return m126b(d * 0.25d, d * 0.6499999761581421d);
         } else {
-            ?? r12 = this.f678b;
-            return r12.m126b(r12 * 0.20000000298023224d, r12 * 0.550000011920929d);
+            double r12 = this.f678b;
+            return m126b(r12 * 0.20000000298023224d, r12 * 0.550000011920929d);
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v10, types: [double, com.vtrump.vtble.c.h] */
-    /* JADX WARN: Type inference failed for: r1v2, types: [double, com.vtrump.vtble.c.h] */
-    /* renamed from: X */
+
     protected double[] mo78X() {
         if (m141J()) {
             if (this.f681e < 19.0d) {
-                return m126b(this * 0.21299999952316284d, this.f678b * 0.5325000286102295d);
+                return m126b(this.f678b * 0.21299999952316284d, this.f678b * 0.5325000286102295d);
             }
-            ?? r1 = this.f678b;
-            return r1.m126b(r1 * 0.17749999463558197d, r1 * 0.390500009059906d);
+            double r1 = this.f678b;
+            return m126b(r1 * 0.17749999463558197d, r1 * 0.390500009059906d);
         } else if (this.f681e < 19.0d) {
             double d = this.f678b;
             return m126b(d * 0.17749999463558197d, d * 0.46149998903274536d);
         } else {
-            ?? r12 = this.f678b;
-            return r12.m126b(r12 * 0.1420000046491623d, r12 * 0.390500009059906d);
+           double r12 = this.f678b;
+            return m126b(r12 * 0.1420000046491623d, r12 * 0.390500009059906d);
         }
     }
 
     int gender=0;
     public C0051c setGender(int g){
         this.gender=g;
+        return this;
+    }
+
+    public C0051c setWeight(double w){
+        f678b=w;
+        return this;
+    }
+
+    int age=0;
+    public C0051c setAge(int age){
+        this.age=age;
+        this.f681e=age;
         return this;
     }
 
@@ -547,11 +576,9 @@ public class C0051c  {
     protected double[] mo96N() {
         double[] dArr;
         if (m141J()) {
-            dArr = r0;
-            double[] dArr2 = {0.0d, 49.0d, 59.0d, 88.5d};
+            dArr = new double[] {0.0d, 49.0d, 59.0d, 88.5d};
         } else {
-            dArr = r0;
-            double[] dArr3 = {0.0d, 40.0d, 50.0d, 75.0d};
+            dArr = new double[] {0.0d, 40.0d, 50.0d, 75.0d};
         }
         return dArr;
     }
@@ -559,7 +586,7 @@ public class C0051c  {
     /* JADX WARN: Not initialized variable reg: 2, insn: ?: MOVE  (r0 I:??) = (r2 I:??), block:B:11:0x0043 */
     /* renamed from: f */
     protected double[] mo68f() {
-        double d;
+        double d=this.f678b;
         if (!m141J()) {
             return d < 45.0d ? m138a(0.5d, 3.0d) : this.f678b < 60.0d ? m138a(1.7999999523162842d, 4.199999809265137d) : m138a(2.0d, 6.5d);
         }
@@ -581,18 +608,14 @@ public class C0051c  {
         return new double[]{0.0d, d3, d3 * 1.5d};
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Not initialized variable reg: 2, insn: ?: MOVE  (r0 I:??) = (r2 I:??), block:B:17:0x00b3 */
-    /* JADX WARN: Type inference failed for: r1v30, types: [double, com.vtrump.vtble.c.h] */
-    /* JADX WARN: Type inference failed for: r1v6, types: [double, com.vtrump.vtble.c.h] */
-    /* renamed from: H */
+
     protected double[] m143H() {
-        double d;
+        double d = this.f681e;
         if (m141J()) {
             double d2 = this.f681e;
             if (d2 < 19.0d) {
                 double d3 = this.f678b;
-                return m137a(this * 0.8799999952316284d, d3 * 0.8299999833106995d, d3 * 0.7799999713897705d);
+                return m137a(d3 * 0.8799999952316284d, d3 * 0.8299999833106995d, d3 * 0.7799999713897705d);
             } else if (d2 < 31.0d) {
                 double d4 = this.f678b;
                 return m137a(d4 * 0.8759999871253967d, d4 * 0.8199999928474426d, d4 * 0.7699999809265137d);
@@ -603,8 +626,8 @@ public class C0051c  {
                 double d6 = this.f678b;
                 return m137a(d6 * 0.8659999966621399d, d6 * 0.8100000023841858d, d6 * 0.7660000324249268d);
             } else {
-                ?? r1 = this.f678b;
-                return r1.m137a(r1 * 0.8600000143051147d, r1 * 0.8059999942779541d, r1 * 0.7599999904632568d);
+                double r1 = this.f678b;
+                return m137a(r1 * 0.8600000143051147d, r1 * 0.8059999942779541d, r1 * 0.7599999904632568d);
             }
         }
         double d7 = this.f681e;
@@ -621,33 +644,30 @@ public class C0051c  {
             double d11 = this.f678b;
             return m137a(d11 * 0.8359999656677246d, d11 * 0.7599999904632568d, d11 * 0.7200000286102295d);
         } else {
-            ?? r12 = this.f678b;
-            return r12.m137a(r12 * 0.8299999833106995d, r12 * 0.7559999823570251d, r12 * 0.715999960899353d);
+            double r12 = this.f678b;
+            return m137a(r12 * 0.8299999833106995d, r12 * 0.7559999823570251d, r12 * 0.715999960899353d);
         }
     }
 
-    /* renamed from: M */
+
     protected double[] mo85M() {
         return m141J() ? this.f681e < 19.0d ? m126b(10.75d, 46.875d) : m126b(15.625d, 34.375d) : this.f681e < 19.0d ? m126b(15.625d, 40.625d) : m126b(12.5d, 34.375d);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v10, types: [double, com.vtrump.vtble.c.h] */
-    /* JADX WARN: Type inference failed for: r1v2, types: [double, com.vtrump.vtble.c.h] */
-    /* renamed from: V */
+
     protected double[] mo80V() {
         if (m141J()) {
             if (this.f681e < 19.0d) {
-                return m126b(this * 0.10750000178813934d, this.f678b * 0.46875d);
+                return m126b(this.f678b * 0.10750000178813934d, this.f678b * 0.46875d);
             }
-            ?? r1 = this.f678b;
-            return r1.m126b(r1 * 0.15625d, r1 * 0.34375d);
+            double r1 = this.f678b;
+            return m126b(r1 * 0.15625d, r1 * 0.34375d);
         } else if (this.f681e < 19.0d) {
             double d = this.f678b;
             return m126b(d * 0.15625d, d * 0.40625d);
         } else {
-            ?? r12 = this.f678b;
-            return r12.m126b(r12 * 0.125d, r12 * 0.34375d);
+            double r12 = this.f678b;
+            return m126b(r12 * 0.125d, r12 * 0.34375d);
         }
     }
 
@@ -657,27 +677,27 @@ public class C0051c  {
         return new double[]{0.0d, d, d * 1.5d};
     }
 
-    /* renamed from: Q */
+
     protected int[] mo83Q() {
         return new int[]{0, 60, 70, 80, 90, 100};
     }
 
-    /* renamed from: a */
+
     public double[] m137a(double d, double d2, double d3) {
         return new double[]{0.0d, StringUtils.m183b(d, 1), StringUtils.m183b(d2, 1), StringUtils.m183b(d3, 1), StringUtils.m183b(d3 * 1.5d, 1)};
     }
 
-    /* renamed from: a */
+
     public double[] m138a(double d, double d2) {
         return new double[]{0.0d, d, d2, StringUtils.m183b(d2 * 1.5d, 1)};
     }
 
-    /* renamed from: b */
+
     public double[] m126b(double d, double d2) {
         return new double[]{0.0d, StringUtils.m183b(d, 1), StringUtils.m183b(d2, 1), StringUtils.m183b(d2 * 1.5d, 1)};
     }
 
-    /* renamed from: c */
+
     public double[] m123c(double d, double d2) {
         return new double[]{0.0d, StringUtils.m183b(d, 1), StringUtils.m183b(d2, 1), StringUtils.m183b(d2 * 1.5d, 1)};
     }
